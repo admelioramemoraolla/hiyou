@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untukmu</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: "Segoe UI", sans-serif;
+    }
+
+    body{
+        background: linear-gradient(135deg,#ffe6f0,#fff7e6);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+    }
+
+    .card{
+        width:90%;
+        max-width:500px;
+        background:white;
+        padding:30px;
+        border-radius:20px;
+        box-shadow:0 10px 30px rgba(0,0,0,0.2);
+        text-align:center;
+    }
+
+    h1{
+        color:#d63384;
+        margin-bottom:15px;
+    }
+
+    p{
+        color:#555;
+        line-height:1.8;
+    }
+
+    input{
+        width:100%;
+        padding:12px;
+        margin:20px 0;
+        border-radius:10px;
+        border:1px solid #ccc;
+        font-size:16px;
+    }
+
+    button{
+        width:100%;
+        padding:12px;
+        border:none;
+        border-radius:10px;
+        background:#d63384;
+        color:white;
+        font-size:16px;
+        cursor:pointer;
+    }
+
+    button:hover{
+        background:#b0256d;
+    }
+
+    #content{
+        display:none;
+    }
+
+    .error{
+        color:red;
+        margin-top:15px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+    <div id="login">
+        <h1>💌 Sebuah Pesan</h1>
+        <p>Masukkan kata sandi untuk membuka kartu ini.</p>
+
+        <input type="password" id="password" placeholder="Masukkan kata sandi">
+
+        <button onclick="cekPassword()">Buka</button>
+
+        <div class="error" id="error"></div>
+    </div>
+
+    <div id="content">
+        <h1>🌸 Untukmu 🌸</h1>
+
+        <p>
+            Terima kasih telah meluangkan waktu untuk membuka halaman sederhana ini.
+            <br><br>
+
+            Semoga setiap langkah yang kamu ambil selalu dipenuhi kebahagiaan,
+            harapan, dan keberanian untuk terus melangkah.
+            <br><br>
+
+            Apa pun yang sedang kamu perjuangkan hari ini,
+            semoga semuanya berakhir dengan indah.
+            <br><br>
+
+            <b>Ad Meliora.</b><br>
+            <i>Menuju hal-hal yang lebih baik.</i>
+        </p>
+    </div>
+
+</div>
+
+<script>
+function cekPassword() {
+    const password = document.getElementById("password").value;
+
+    if(password === "admeliora"){
+        document.getElementById("login").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    }else{
+        document.getElementById("error").innerHTML = "❌ Kata sandi salah.";
+    }
+}
+
+document.getElementById("password").addEventListener("keypress", function(event){
+    if(event.key === "Enter"){
+        cekPassword();
+    }
+});
+</script>
+
+</body>
+</html>
