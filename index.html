@@ -129,6 +129,18 @@ p{
 #musicBtn:hover{
     background:#ff5fa2;
 }
+   .hint-box{
+    width:100%;
+    background:#fff4f8;
+    border:1px solid #ffd6e7;
+    border-radius:12px;
+    padding:12px;
+    margin:15px 0 20px 0;
+    color:#b86b8d;
+    font-size:14px;
+    line-height:1.6;
+    text-align:center;
+}
 </style>
 
 </head>
@@ -149,6 +161,10 @@ p{
 
         <input type="password" id="password" placeholder="Masukkan kata sandi">
 
+      <p class="hint">
+    ✿ Petunjuk: <i>"frasa favorit kamu; menuju hal-hal yang lebih baik."</i>
+</p>
+       
         <button onclick="cekPassword()">Buka</button>
 
         <div class="error" id="error"></div>
