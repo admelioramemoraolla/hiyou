@@ -99,33 +99,24 @@ p{
     text-align:center;
 }
 #musicBtn{
+    display:none;
     position:fixed;
-    top:20px;
+    bottom:20px;
     right:20px;
-
     width:55px;
     height:55px;
-
     border-radius:50%;
-
-    display:flex;
     justify-content:center;
     align-items:center;
-
     background:#ff7fb5;
     color:white;
-
     border:none;
-
     cursor:pointer;
-
     z-index:999;
-
     font-size:22px;
-
     box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
-
+   
 #musicBtn:hover{
     background:#ff5fa2;
 }
@@ -219,6 +210,8 @@ function cekPassword() {
 
         document.getElementById("login").style.display = "none";
         document.getElementById("content").style.display = "block";
+
+       document.getElementById("musicBtn").style.display = "flex";
 
         document.getElementById("bgMusic").play();
 
